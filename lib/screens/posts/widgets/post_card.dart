@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_assessment/core/constants/custom_colors.dart';
 import 'package:flutter_assessment/core/models/post.dart';
+import 'package:flutter_assessment/core/providers/app_provider.dart';
 import 'package:flutter_assessment/core/providers/posts_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -17,13 +18,15 @@ class PostCard extends ConsumerWidget {
     return ListTile(
       onTap: () {
         ref.read(selectedPostIdProvider.notifier).state = post.id;
+        Navigator.pushNamed(context, Routes.postDetails);
       },
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
-          side: const BorderSide(
-            color: Colors.grey,
-            width: 1,
-          )),
+        borderRadius: BorderRadius.circular(15),
+        side: const BorderSide(
+          color: Colors.grey,
+          width: 1,
+        ),
+      ),
       contentPadding: const EdgeInsets.symmetric(
         horizontal: 20.0,
         vertical: 15.0,
