@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Post _$PostFromJson(Map<String, dynamic> json) {
-  return _Post.fromJson(json);
+Comment _$CommentFromJson(Map<String, dynamic> json) {
+  return _Comment.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Post {
+mixin _$Comment {
   @JsonKey(name: "postId")
   int get postId => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
@@ -29,13 +29,13 @@ mixin _$Post {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PostCopyWith<Post> get copyWith => throw _privateConstructorUsedError;
+  $CommentCopyWith<Comment> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PostCopyWith<$Res> {
-  factory $PostCopyWith(Post value, $Res Function(Post) then) =
-      _$PostCopyWithImpl<$Res, Post>;
+abstract class $CommentCopyWith<$Res> {
+  factory $CommentCopyWith(Comment value, $Res Function(Comment) then) =
+      _$CommentCopyWithImpl<$Res, Comment>;
   @useResult
   $Res call(
       {@JsonKey(name: "postId") int postId,
@@ -46,9 +46,9 @@ abstract class $PostCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PostCopyWithImpl<$Res, $Val extends Post>
-    implements $PostCopyWith<$Res> {
-  _$PostCopyWithImpl(this._value, this._then);
+class _$CommentCopyWithImpl<$Res, $Val extends Comment>
+    implements $CommentCopyWith<$Res> {
+  _$CommentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -90,9 +90,10 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
 }
 
 /// @nodoc
-abstract class _$$_PostCopyWith<$Res> implements $PostCopyWith<$Res> {
-  factory _$$_PostCopyWith(_$_Post value, $Res Function(_$_Post) then) =
-      __$$_PostCopyWithImpl<$Res>;
+abstract class _$$_CommentCopyWith<$Res> implements $CommentCopyWith<$Res> {
+  factory _$$_CommentCopyWith(
+          _$_Comment value, $Res Function(_$_Comment) then) =
+      __$$_CommentCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -104,9 +105,10 @@ abstract class _$$_PostCopyWith<$Res> implements $PostCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res, _$_Post>
-    implements _$$_PostCopyWith<$Res> {
-  __$$_PostCopyWithImpl(_$_Post _value, $Res Function(_$_Post) _then)
+class __$$_CommentCopyWithImpl<$Res>
+    extends _$CommentCopyWithImpl<$Res, _$_Comment>
+    implements _$$_CommentCopyWith<$Res> {
+  __$$_CommentCopyWithImpl(_$_Comment _value, $Res Function(_$_Comment) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -118,7 +120,7 @@ class __$$_PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res, _$_Post>
     Object? email = null,
     Object? body = null,
   }) {
-    return _then(_$_Post(
+    return _then(_$_Comment(
       postId: null == postId
           ? _value.postId
           : postId // ignore: cast_nullable_to_non_nullable
@@ -146,15 +148,16 @@ class __$$_PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res, _$_Post>
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class _$_Post implements _Post {
-  const _$_Post(
+class _$_Comment implements _Comment {
+  const _$_Comment(
       {@JsonKey(name: "postId") required this.postId,
       required this.id,
       required this.name,
       required this.email,
       required this.body});
 
-  factory _$_Post.fromJson(Map<String, dynamic> json) => _$$_PostFromJson(json);
+  factory _$_Comment.fromJson(Map<String, dynamic> json) =>
+      _$$_CommentFromJson(json);
 
   @override
   @JsonKey(name: "postId")
@@ -170,14 +173,14 @@ class _$_Post implements _Post {
 
   @override
   String toString() {
-    return 'Post(postId: $postId, id: $id, name: $name, email: $email, body: $body)';
+    return 'Comment(postId: $postId, id: $id, name: $name, email: $email, body: $body)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Post &&
+            other is _$_Comment &&
             (identical(other.postId, postId) || other.postId == postId) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
@@ -192,26 +195,26 @@ class _$_Post implements _Post {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PostCopyWith<_$_Post> get copyWith =>
-      __$$_PostCopyWithImpl<_$_Post>(this, _$identity);
+  _$$_CommentCopyWith<_$_Comment> get copyWith =>
+      __$$_CommentCopyWithImpl<_$_Comment>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PostToJson(
+    return _$$_CommentToJson(
       this,
     );
   }
 }
 
-abstract class _Post implements Post {
-  const factory _Post(
+abstract class _Comment implements Comment {
+  const factory _Comment(
       {@JsonKey(name: "postId") required final int postId,
       required final int id,
       required final String name,
       required final String email,
-      required final String body}) = _$_Post;
+      required final String body}) = _$_Comment;
 
-  factory _Post.fromJson(Map<String, dynamic> json) = _$_Post.fromJson;
+  factory _Comment.fromJson(Map<String, dynamic> json) = _$_Comment.fromJson;
 
   @override
   @JsonKey(name: "postId")
@@ -226,5 +229,6 @@ abstract class _Post implements Post {
   String get body;
   @override
   @JsonKey(ignore: true)
-  _$$_PostCopyWith<_$_Post> get copyWith => throw _privateConstructorUsedError;
+  _$$_CommentCopyWith<_$_Comment> get copyWith =>
+      throw _privateConstructorUsedError;
 }

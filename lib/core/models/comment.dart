@@ -4,15 +4,16 @@ part 'comment.freezed.dart';
 part 'comment.g.dart';
 
 @freezed
-class Post with _$Post {
+class Comment with _$Comment {
   @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory Post({
+  const factory Comment({
     @JsonKey(name: "postId") required int postId,
     required int id,
     required String name,
     required String email,
     required String body,
-  }) = _Post;
+  }) = _Comment;
 
-  factory Post.fromJson(Map<String, Object?> json) => _$PostFromJson(json);
+  factory Comment.fromJson(Map<String, Object?> json) =>
+      _$CommentFromJson(json);
 }
